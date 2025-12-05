@@ -46,12 +46,12 @@ The feature space was high-dimensional and sparse, especially with the country o
 To better illustrate this decision, here is the **t-SNE** projection I generated. It resulted in a less structured "blob" compared to UMAP:
 
 <img src="images/tsne_2d.png" alt="t-SNE Projection" width="500"/>
-*t-SNE Projection: Groupings are less distinct.*
+t-SNE Projection: Groupings are less distinct.
 
 I used UMAP to project the data into **10 dimensions** for the clustering algorithms (to retain more information) and **2 dimensions** for visualization.
 
 <img src="images/umap_2d_projection.png" alt="UMAP Projection" width="500"/>
-*UMAP 2D Projection of the customer data. You can clearly see dense regions, suggesting natural groups.*
+UMAP 2D Projection of the customer data. You can clearly see dense regions, suggesting natural groups.
 
 ## 3. Clustering (Model Selection)
 
@@ -64,27 +64,27 @@ With the UMAP embeddings ready, I tested four different clustering algorithms to
 I used the **Elbow Method** and **Silhouette Scores** to determine the optimal number of clusters. **k=4** emerged as the clear winner with a **Silhouette Score of 0.46**, offering distinct and actionable customer groups.
 
 <img src="images/kmeans_elbow_and_silhouette.png" alt="Elbow and Silhouette Analysis" width="500"/>
-*Left: Elbow curve showing the optimal 'k'. Right: Silhouette score confirming cluster separation.*
+Left: Elbow curve showing the optimal 'k'. Right: Silhouette score confirming cluster separation.
 
 <img src="images/kmeans_final_optimized.png" alt="Clusters" width="500"/>
-*The four resulting customer segments.*
+The four resulting customer segments.
 
 ## 4. Profiling & Results
 
 Once I had the clusters, I analyzed their "personalities" by looking at their feature distributions.
 
 <img src="images/cluster_boxplots.png" alt="Boxplots" width="500"/>
-*Feature distributions across clusters.*
+Feature distributions across clusters.
 
 I also created a heatmap to see how each cluster compares to the average customer.
 
 <img src="images/cluster_heatmap.png" alt="Heatmap" width="500"/>
-*Relative importance of attributes. Red means higher than average, blue means lower.*
+Relative importance of attributes. Red means higher than average, blue means lower.
 
 To clearly visualize these profiles, I utilized a **Radar Chart**, which makes it easy to compare the clusters across key dimensions (RFM):
 
 <img src="images/rfm_radar_chart.png" alt="RFM Radar Chart" width="500"/>
-*Comparison of customer segments across Recency, Frequency, and Monetary value.*
+Comparison of customer segments across Recency, Frequency, and Monetary value.
 
 ### My Personas
 Based on these insights, I defined 4 personas:
