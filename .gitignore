@@ -1,7 +1,18 @@
+.vscode/
+.DS_Store
+
 __pycache__/
 .ipynb_checkpoints/
 *.pkl
 *.csv
 
 data/
+!data/.gitkeep
 models/
+!models/.gitkeep
+images/
+!images/.gitkeep
+
+venv/
+env/
+.env
